@@ -5,34 +5,34 @@
 int main() {
     setlocale(LC_ALL, "Russian");
 
-    std::cout << "=== Тестирование DynamicIntArray ===" << std::endl;
+    std::cout << "Task #2. Classes" << std::endl;
 
-    std::cout << "\n1. Создаем массив на 3 элемента:" << std::endl;
+    std::cout << "\n1)Creating array of three elements:" << std::endl;
     DynamicIntArray a(3);
     a.set(0, 10);
     a.set(1, -20);
     a.set(2, 50);
-    a.set(3, 30);  //обработка ошибки неверный индекс
-    a.set(1, 150); //обработка ошибки неверное значение
+    a.set(3, 30);  //testing error 'index out of range'
+    a.set(1, 150); //testing error 'element out of range'
 
-    std::cout << "Массив a: ";
+    std::cout << "Array a: ";
     a.print();
 
     std::cout << "a[1] = " << a.get(1) << std::endl;
-    std::cout << "a[5] = " << a.get(5) << std::endl;  //обработка ошибки
+    std::cout << "a[5] = " << a.get(5) << std::endl;  //testing errors
 
-    std::cout << "\n2. Копируем массив:" << std::endl;
+    std::cout << "\n2)Copying array:" << std::endl;
     DynamicIntArray b = a;
-    std::cout << "Массив b (копия a): ";
+    std::cout << "Array b (copy a): ";
     b.print();
 
-    std::cout << "\n3. Добавляем элементы в конец:" << std::endl;
+    std::cout << "\n3)Adding elements to the end:" << std::endl;
     a.push_back(75);
-    a.push_back(-101);  //обработка ошибки
-    std::cout << "Массив a после push_back: ";
+    a.push_back(-101);  //testing errors
+    std::cout << "Array a after push_back: ";
     a.print();
 
-    std::cout << "\n4. Сложение и вычитание:" << std::endl;
+    std::cout << "\n4)Summ and substract:" << std::endl;
 
     DynamicIntArray c(3);
     c.set(0, 5);
@@ -43,9 +43,9 @@ int main() {
     d.set(0, 3);
     d.set(1, -5);
 
-    std::cout << "Массив c: ";
+    std::cout << "Array c: ";
     c.print();
-    std::cout << "Массив d: ";
+    std::cout << "Array d: ";
     d.print();
 
     c.add(d);

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "DynamicIntArray.h"
 
+//constructor
 DynamicIntArray:: DynamicIntArray(int size) {
         this->size = size;
         arr = new int[size];
@@ -9,12 +10,12 @@ DynamicIntArray:: DynamicIntArray(int size) {
         }
     }
 
-    // Деструктор
+//destructor
 DynamicIntArray::~DynamicIntArray() {
     delete[] arr;
 }
 
-    // Конструктор копирования
+//copying constructor 
 DynamicIntArray::DynamicIntArray(const DynamicIntArray& other) {
     size = other.size;
     arr = new int[size];
@@ -23,7 +24,7 @@ DynamicIntArray::DynamicIntArray(const DynamicIntArray& other) {
     }
 }
 
-    // Вывод массива
+//outputting array
 void DynamicIntArray::print() {
     for (int i = 0; i < size; i++) {
        std::cout << arr[i] << " ";
@@ -31,7 +32,7 @@ void DynamicIntArray::print() {
     std::cout << std::endl;
 }
 
-    // Геттер
+//getter
 int DynamicIntArray::get(int index) {
     if (index < 0 || index >= size) {
        std::cout << "Ошибка: неверный индекс!" << std::endl;
@@ -40,7 +41,7 @@ int DynamicIntArray::get(int index) {
     return arr[index];
 }
 
-    // Сеттер
+//setter
 void DynamicIntArray::set(int index, int value) {
     if (index < 0 || index >= size) {
        std::cout << "Ошибка: неверный индекс!" << std::endl;
@@ -53,7 +54,7 @@ void DynamicIntArray::set(int index, int value) {
     arr[index] = value;
 }
 
-    // Добавление в конец
+//end adding
 void DynamicIntArray::push_back(int value) {
    if (value < -100 || value > 100) {
        std::cout << "Ошибка: значение должно быть от -100 до 100!" << std::endl;
@@ -74,7 +75,7 @@ void DynamicIntArray::push_back(int value) {
     size++;
     }
 
-    // Сложение массивов
+//array sum
 void DynamicIntArray::add(DynamicIntArray& other) {
     for (int i = 0; i < size; i++) {
        if (i < other.size) {
@@ -85,7 +86,7 @@ void DynamicIntArray::add(DynamicIntArray& other) {
     }
 }
 
-    // Вычитание массивов
+//array substraction
 void DynamicIntArray::subtract(DynamicIntArray& other) {
     for (int i = 0; i < size; i++) {
        if (i < other.size) {
@@ -96,7 +97,7 @@ void DynamicIntArray::subtract(DynamicIntArray& other) {
     }
 }
 
-    // Получение размера
+//size get
 int DynamicIntArray::get_size() {
     return size;
 }
