@@ -35,7 +35,7 @@ void DynamicIntArray::print() {
 //getter
 int DynamicIntArray::get(int index) {
     if (index < 0 || index >= size) {
-       std::cout << "Ошибка: неверный индекс!" << std::endl;
+       std::cout << "Error 'index out of range'" << std::endl;
        return 0;
     }
     return arr[index];
@@ -44,11 +44,11 @@ int DynamicIntArray::get(int index) {
 //setter
 void DynamicIntArray::set(int index, int value) {
     if (index < 0 || index >= size) {
-       std::cout << "Ошибка: неверный индекс!" << std::endl;
+       std::cout << "Error 'index out of range'" << std::endl;
        return;
     }
     if (value < -100 || value > 100) {
-        std::cout << "Ошибка: значение должно быть от -100 до 100!" << std::endl;
+        std::cout << "Error 'element value out of range (-100, 100)'" << std::endl;
         return;
     }
     arr[index] = value;
@@ -57,7 +57,7 @@ void DynamicIntArray::set(int index, int value) {
 //end adding
 void DynamicIntArray::push_back(int value) {
    if (value < -100 || value > 100) {
-       std::cout << "Ошибка: значение должно быть от -100 до 100!" << std::endl;
+       std::cout << "Error 'element value out of range (-100, 100)'" << std::endl;
        return;
    }
 
