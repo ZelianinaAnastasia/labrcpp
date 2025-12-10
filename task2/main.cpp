@@ -3,8 +3,6 @@
 
 
 int main() {
-    setlocale(LC_ALL, "Russian");
-
     std::cout << "Task #2. Classes" << std::endl;
 
     std::cout << "\n1)Creating array of three elements:" << std::endl;
