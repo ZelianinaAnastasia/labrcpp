@@ -6,33 +6,33 @@ private:
     int size;
 
 public:
-    // Конструктор
+    //constructor
     DynamicIntArray(int size);
 
-    // Деструктор
+    //destructor
     ~DynamicIntArray();
 
-    // Конструктор копирования
+    //copying constructor 
     DynamicIntArray(const DynamicIntArray& other);
 
-    // Вывод массива
+    //outputting array
     void print();
 
-    // Геттер
+    //getter
     int get(int index);
 
-    // Сеттер
+    //setter
     void set(int index, int value);
 
-    // Добавление в конец
+    //end adding
     void push_back(int value);
 
-    // Сложение массивов
+    //array sum
     void add(DynamicIntArray& other); 
 
-    // Вычитание массивов
+    //array substraction
     void subtract(DynamicIntArray& other);
 
-    // Получение размера
+    //size get
     int get_size();
 };
