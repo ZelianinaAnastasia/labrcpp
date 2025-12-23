@@ -5,10 +5,10 @@
 #include "func.h"
 #pragma once
 
-#define M_PI 3.1415926
-#define eps 1e-5
+#define M_PI 3.1415926 //pi const
+#define eps 1e-5 //eps precision
 
-// Вспомогательная функция сравнения чисел с точностью eps
+//helper function for number and precision eps comparison
 int equal(double a, double b) {
 	return fabs(a - b) < eps;
 }
@@ -55,7 +55,6 @@ void get_square(Square& s){
 }
 
 
-//функции нахождения периметра, длины окружности, площади
 double circle_leng(Circle& c){
 	return 2 * M_PI * c.rad_leng;
 }
@@ -70,19 +69,17 @@ double square_space(Square& s){
 	return pow(s.side_leng, 2);
 }
 
-//принадлежность точки площади круга
-double point_in_circle(Point& k, Circle& c) { //использует calc
+
+double point_in_circle(Point& k, Circle& c) { 
 	double dist = calc_distance(k, c.central);
 	return dist < c.rad_leng - eps;
 }
 
-//нахождение точки на контуре круга
-double point_on_circle(Point& k, Circle& c) { //использует calc
+double point_on_circle(Point& k, Circle& c) { 
 	double dist = calc_distance(k, c.central);
 	return equal(c.rad_leng, dist);
 }
 
-//принадлежность точки квадрату
 double point_in_square(Point& k, Square& s){
 	double ang1_kx = s.left_up.kx;
 	double ang1_ky = s.left_up.ky;
@@ -104,7 +101,7 @@ double point_on_square(Point& k, Square& s) {
 		|| equal(k.kx, ang2_kx) || equal(k.ky, ang2_ky);
 }
 
-//пересечение фигур
+
 double circle_witn_circle(Circle& c1, Circle& c2) {
 	double sumrad = c1.rad_leng + c2.rad_leng;
 	double dist = calc_distance(c1.central, c2.central);
@@ -163,7 +160,7 @@ double circle_with_square(Circle& c, Square& s){
 		|| point_in_circle(leftdown, c) || point_in_circle(rightdown, c));
 }
 
-//принадлежность фигуры
+
 double circle_in_circle(Circle& c1, Circle& c2) {
 	Point left;
 	left.kx = c2.central.kx - c2.rad_leng;

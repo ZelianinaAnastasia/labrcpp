@@ -1,19 +1,18 @@
-//заголовочный файл со структурами
 #pragma once
 
 struct Point {
-	float kx; //координата точки по х
-	float ky; //координата точки по у
+	float kx; //point's x coordinate
+	float ky; //point's y coordinate
 };
 
 struct Circle {
-	Point central; //точка центра окружности
-	float rad_leng; //длина радиуса
+	Point central; 
+	float rad_leng; //radius length
 };
 
 struct Square {
-	Point left_up; //левая верхняя точка квадрата
-	float side_leng; //длина стороны квадрата
+	Point left_up; //square's top left point
+	float side_leng; //square's side length
 };
 
 
